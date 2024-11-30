@@ -27,7 +27,7 @@ const [countryAddress, setCountryAddress] = useState (profile.countryAddress);
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id: profile.id, name, phone, department, streetAddress, cityAddress, stateAddress, zipAddress, countryAddress, fontSize }), // Include fontSize in request
     })
-      .then(() => setPage('home')) // Navigate back to the home page after saving
+      .then(() => {setPage('home'); alert ('success');}) // Navigate back to the home page after saving
       .catch(() => alert('Failed to save note.'));
   };
 
