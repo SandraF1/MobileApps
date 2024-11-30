@@ -54,7 +54,7 @@ const SettingsPage = ({ setPage, fontSize, setFontSize }) => {
     try {
       await AsyncStorage.setItem('fontSize', newFontSize.toString()); 
       setFontSize(newFontSize); 
-      setPage('home');  
+      setPage('home'); alert ('Save successful');
     } catch (error) {
       console.error('Error saving font size:', error);
     }
