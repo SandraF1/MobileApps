@@ -27,7 +27,7 @@ const [countryAddress, setCountryAddress] = useState('');
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, phone, department, streetAddress, cityAddress, stateAddress, zipAddress, countryAddress, fontSize }), // Include font size in request
     })
-      .then(() => setPage('home')) // Navigate back to home page on success
+      .then(() => {setPage('home'); alert ('note saved');}) // Navigate back to home page on success
       .catch(() => alert('Failed to save note.')); // Alert if the request fails
   };
 
