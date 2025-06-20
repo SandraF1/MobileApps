@@ -1,0 +1,447 @@
+[
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.AuthController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/auth/refresh-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SeniorLearnApi.DTOs.Requests.RefreshTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.AuthResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SeniorLearnApi.DTOs.Requests.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.AuthResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.AuthController",
+    "Method": "SignIn",
+    "RelativePath": "api/auth/sign-in",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SeniorLearnApi.DTOs.Requests.SignInRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.AuthResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.AuthController",
+    "Method": "SignOut",
+    "RelativePath": "api/auth/sign-out",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SeniorLearnApi.DTOs.Requests.SignOutRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.MemberBulletinController",
+    "Method": "GetAllMemberBulletins",
+    "RelativePath": "api/bulletins/member",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[SeniorLearnApi.DTOs.Responses.MemberBulletinListItemResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.MemberBulletinController",
+    "Method": "CreateMemberBulletin",
+    "RelativePath": "api/bulletins/member",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SeniorLearnApi.DTOs.Requests.CreateMemberBulletinRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.MemberBulletinDetailResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.MemberBulletinController",
+    "Method": "GetMemberBulletinById",
+    "RelativePath": "api/bulletins/member/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.MemberBulletinDetailResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.MemberBulletinController",
+    "Method": "UpdateMemberBulletin",
+    "RelativePath": "api/bulletins/member/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SeniorLearnApi.DTOs.Requests.UpdateMemberBulletinRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.MemberBulletinDetailResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.MemberBulletinController",
+    "Method": "DeleteMemberBulletin",
+    "RelativePath": "api/bulletins/member/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.OfficialBulletinController",
+    "Method": "GetAllOfficialBulletins",
+    "RelativePath": "api/bulletins/official",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[SeniorLearnApi.DTOs.Responses.OfficialBulletinListItemResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.OfficialBulletinController",
+    "Method": "CreateOfficialBulletin",
+    "RelativePath": "api/bulletins/official",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SeniorLearnApi.DTOs.Requests.CreateOfficialBulletinRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.OfficialBulletinDetailResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.OfficialBulletinController",
+    "Method": "GetOfficialBulletinById",
+    "RelativePath": "api/bulletins/official/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.OfficialBulletinDetailResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.OfficialBulletinController",
+    "Method": "UpdateOfficialBulletin",
+    "RelativePath": "api/bulletins/official/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SeniorLearnApi.DTOs.Requests.UpdateOfficialBulletinRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.OfficialBulletinDetailResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.OfficialBulletinController",
+    "Method": "DeleteOfficialBulletin",
+    "RelativePath": "api/bulletins/official/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.UserProfileController",
+    "Method": "GetProfile",
+    "RelativePath": "api/profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.ProfileResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.UserProfileController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/profile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SeniorLearnApi.DTOs.Requests.UpdateProfileRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.ProfileResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.UserProfileController",
+    "Method": "GetSettings",
+    "RelativePath": "api/profile/settings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.SettingsResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeniorLearnApi.Controllers.UserProfileController",
+    "Method": "UpdateSettings",
+    "RelativePath": "api/profile/settings",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SeniorLearnApi.DTOs.Requests.UpdateSettingsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeniorLearnApi.DTOs.Responses.ApiResponse\u00601[[SeniorLearnApi.DTOs.Responses.SettingsResponse, SeniorLearnApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
