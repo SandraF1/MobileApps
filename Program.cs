@@ -88,14 +88,18 @@ builder.Services.AddCors(options =>
  
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
-    serverOptions.ListenAnyIP(3001); // HTTP
+    serverOptions.ListenAnyIP(5143); // HTTP
     // Optional: Add HTTPS with cert
     // serverOptions.ListenAnyIP(7100, listenOptions => listenOptions.UseHttps());
 });
  
  
 var app = builder.Build();
- 
+
+
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://*:{port}");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -146,5 +150,5 @@ async Task RunMongoScript() // Fixed: Made async
     // To delete data (commented out as it would delete right after seeding)
     //await DatabaseSeedRunner.DeleteMongoDataAsync();
     // With custom connection string (commented out to avoid duplicate seeding)
-    // await DatabaseSeedRunner.RunMongoSeedAsync("mongodb://localhost:27021", "SeniorLearnBulletin");
+    // await DatabaseSeedRunner.RunMongoSeedAsync("mongodb://localhost:27017", "SeniorLearnBulletin");
 }
