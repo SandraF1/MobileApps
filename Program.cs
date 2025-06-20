@@ -16,14 +16,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Bind POCO Settings
 builder.Services.Configure<MongoDbSettings>(
 builder.Configuration.GetSection("MongoDbSettings"));
- 
+
 // dependency injection uses types to call methods rather than names
-builder.Services.AddSingleton<MongoClient>(sp =>
+builder.Services.Configure<MongoDbSettings>(options =>
 {
-    var settings = sp.GetRequiredService<IOptions<MongoDbSettings>>().Value;
-    return new MongoClient(settings.ConnectionString);
+    options.ConnectionString = Environment.GetEnvironmentVariable("MONGO_URL") ?? "";
+    options.DatabaseName = "SeniorLearnBulletin"; // or from config if you want
 });
- 
+
+
 //Why? You can use interfaces to access the properties of classes that implement them
 builder.Services.AddSingleton<IMongoDatabase>(sp =>
 {
