@@ -18,11 +18,18 @@ var builder = WebApplication.CreateBuilder(args);
 var mongoUri = Environment.GetEnvironmentVariable("MONGO_URL");
 var databaseName = Environment.GetEnvironmentVariable("MONGO_DBNAME") ?? "SeniorLearnBulletin";
 
-builder.Services.Configure<MongoDbSettings>(options =>
+/*builder.Services.Configure<MongoDbSettings>(options =>
 {
     options.ConnectionString = mongoUri ?? builder.Configuration["MongoDbSettings:ConnectionString"];
     options.DatabaseName = databaseName;
+});*/
+
+builder.Services.Configure<MongoDbSettings>(options =>
+{
+    options.ConnectionString = Environment.GetEnvironmentVariable("MONGO_URL");
+    options.DatabaseName = "SeniorLearnBulletin";
 });
+
 
 
 
@@ -96,7 +103,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
         policy => policy
-         .WithOrigins("http://localhost:3001")
+         .WithOrigins("http://localhost:8081")
             .AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader());
