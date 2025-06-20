@@ -102,7 +102,7 @@ builder.Services.AddScoped<UserSettingService>();
 // Configure CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
+    options.AddPolicy("AllowLocalhost",
         policy => policy
          .WithOrigins("http://localhost:8081")
             //.AllowAnyOrigin()
@@ -137,7 +137,7 @@ app.UseMiddleware<GlobalExceptionMiddleware>();
 //app.UseMiddleware<InputValidationMiddleware>();
  
 //app.UseCors("AllowFrontEnd");
-app.UseCors("AllowFrontend");
+app.UseCors("AllowLocalhost");
  
 app.UseAuthentication();
 app.UseAuthorization();
