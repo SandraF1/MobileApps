@@ -131,7 +131,7 @@ if (app.Environment.IsDevelopment())
  
 await RunMongoScript();
  
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
  
 app.UseMiddleware<GlobalExceptionMiddleware>();
 //app.UseMiddleware<InputValidationMiddleware>();
