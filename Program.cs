@@ -134,8 +134,8 @@ await RunMongoScript();
 app.UseMiddleware<GlobalExceptionMiddleware>();
 //app.UseMiddleware<InputValidationMiddleware>();
  
-app.UseCors("AllowFrontEnd");
-//app.UseCors("AllowFrontend");
+//app.UseCors("AllowFrontEnd");
+app.UseCors("AllowFrontend");
  
 app.UseAuthentication();
 app.UseAuthorization();
