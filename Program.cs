@@ -107,7 +107,9 @@ builder.Services.AddCors(options =>
          .WithOrigins("http://localhost:8081")
             //.AllowAnyOrigin()
             .AllowAnyMethod()
+            .AllowCredentials()
             .AllowAnyHeader());
+
 });
  
 builder.WebHost.ConfigureKestrel(serverOptions =>
