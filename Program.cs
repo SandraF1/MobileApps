@@ -16,7 +16,21 @@ var builder = WebApplication.CreateBuilder(args);
 // Bind POCO Settings
 builder.Services.Configure<MongoDbSettings>(
 builder.Configuration.GetSection("MongoDbSettings"));
- 
+
+
+
+var mongoUri = Environment.GetEnvironmentVariable("MONGO_URL");
+if (!string.IsNullOrEmpty(mongoUri))
+{
+    builder.Configuration["MongoDbSettings:ConnectionString"] = mongoUri;
+}
+
+
+
+
+
+
+
 // dependency injection uses types to call methods rather than names
 builder.Services.AddSingleton<MongoClient>(sp =>
 {
@@ -133,7 +147,11 @@ using (var scope = app.Services.CreateScope())
     }
 }
 // --------------------
- 
+
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://*:{port}");
+
+
 app.Run();
  
  
