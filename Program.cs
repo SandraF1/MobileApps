@@ -16,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Bind POCO Settings
 
 var mongoUri = Environment.GetEnvironmentVariable("MONGO_URL");
+Console.WriteLine($"MongoDB URI: {mongoUri}");
 var databaseName = Environment.GetEnvironmentVariable("MONGO_DBNAME") ?? "SeniorLearnBulletin";
 
 /*builder.Services.Configure<MongoDbSettings>(options =>
