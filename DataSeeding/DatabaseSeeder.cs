@@ -12,20 +12,20 @@ namespace SeniorLearnApi.DataSeeding;
 public class DatabaseSeeder
 {
     private readonly IMongoDatabase _database;
-    private readonly string _connectionString = "mongodb://localhost:27021";
+    private readonly string _connectionString;
     private readonly string _databaseName = "SeniorLearnBulletin";
     private List<string> _userIds;
 
+ 
+
     public DatabaseSeeder()
     {
-        var client = new MongoClient(_connectionString);
-        _database = client.GetDatabase(_databaseName);
-    }
+        _connectionString = Environment.GetEnvironmentVariable("MONGO_URL")
+                            ?? "mongodb://localhost:27021"; // fallback for local dev
 
-    public DatabaseSeeder(string connectionString, string databaseName)
-    {
-        _connectionString = connectionString;
-        _databaseName = databaseName;
+        _databaseName = Environment.GetEnvironmentVariable("MONGO_DBNAME")
+                        ?? "SeniorLearnBulletin";
+
         var client = new MongoClient(_connectionString);
         _database = client.GetDatabase(_databaseName);
     }

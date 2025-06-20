@@ -12,18 +12,20 @@ using SeniorLearnApi.Settings;
 using System.Text.Json.Serialization;
  
 var builder = WebApplication.CreateBuilder(args);
- 
+
 // Bind POCO Settings
-builder.Services.Configure<MongoDbSettings>(
-builder.Configuration.GetSection("MongoDbSettings"));
-
-
 
 var mongoUri = Environment.GetEnvironmentVariable("MONGO_URL");
-if (!string.IsNullOrEmpty(mongoUri))
+var databaseName = Environment.GetEnvironmentVariable("MONGO_DBNAME") ?? "SeniorLearnBulletin";
+
+builder.Services.Configure<MongoDbSettings>(options =>
 {
-    builder.Configuration["MongoDbSettings:ConnectionString"] = mongoUri;
-}
+    options.ConnectionString = mongoUri ?? builder.Configuration["MongoDbSettings:ConnectionString"];
+    options.DatabaseName = databaseName;
+});
+
+
+
 
 
 
