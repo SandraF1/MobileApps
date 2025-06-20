@@ -16,13 +16,10 @@ public class DatabaseSeeder
     private readonly string _databaseName = "SeniorLearnBulletin";
     private List<string> _userIds;
 
- 
-
     public DatabaseSeeder()
     {
         _connectionString = Environment.GetEnvironmentVariable("MONGO_URL")
-                            ?? "mongodb://localhost:27021"; // fallback for local dev
-
+                            ?? "mongodb://localhost:27021";
         _databaseName = Environment.GetEnvironmentVariable("MONGO_DBNAME")
                         ?? "SeniorLearnBulletin";
 
@@ -30,6 +27,14 @@ public class DatabaseSeeder
         _database = client.GetDatabase(_databaseName);
     }
 
+    public DatabaseSeeder(string connectionString, string databaseName)
+    {
+        _connectionString = connectionString;
+        _databaseName = databaseName;
+
+        var client = new MongoClient(_connectionString);
+        _database = client.GetDatabase(_databaseName);
+    }
     public async Task SeedDataAsync()
     {
         try
