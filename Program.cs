@@ -104,7 +104,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAll",
         policy => policy
          .WithOrigins("http://localhost:8081")
-            .AllowAnyOrigin()
+            //.AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader());
 });
@@ -133,7 +133,7 @@ await RunMongoScript();
 app.UseMiddleware<GlobalExceptionMiddleware>();
 //app.UseMiddleware<InputValidationMiddleware>();
  
-app.UseCors("AllowAll");
+app.UseCors("AllowFrontEnd");
 //app.UseCors("AllowFrontend");
  
 app.UseAuthentication();
