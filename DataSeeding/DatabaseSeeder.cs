@@ -12,7 +12,7 @@ namespace SeniorLearnApi.DataSeeding;
 public class DatabaseSeeder
 {
     private readonly IMongoDatabase _database;
-    private readonly string _connectionString = "mongodb://localhost:27017";
+    private readonly string _connectionString = "mongodb://127.0.0.1:27030";
     private readonly string _databaseName = "SeniorLearnBulletin";
     private List<string> _userIds;
 
