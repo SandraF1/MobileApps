@@ -1,0 +1,54 @@
+# User-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+out/
+
+# Visual Studio Code settings (if using VS Code)
+.vscode/
+
+# Rider IDE files
+.idea/
+
+# NuGet package files
+*.nupkg
+packages/
+
+# Logs
+*.log
+
+# Publish output
+publish/
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# DotCover coverage files
+*.dotCover
+
+# ReSharper files
+_ReSharper*/
+*.DotSettings.user
+
+# Rider caches
+.idea/
+
+# Entity Framework files
+Migrations/
+
+# Others
+*.cache
+*.pdb
+*.exe
+*.dll
+
+# Node.js or frontend (if any)
+node_modules/
+dist/
